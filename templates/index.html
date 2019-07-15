@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Python online executor</title>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='script.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <h1>Python online executor</h1>
+        <div class="container">
+            <form method="post" name="form">
+                {{ form.csrf_token }}
+                <div>
+                    {{ form.code.label }}
+                    <button class="submit-btn" type="button" onclick="button_click();">run</button>
+                    <br>
+                    {{ form.code(cols=100, rows=25, wrap='off', class='shadow-window code-window') }}
+                </div>
+                <div>
+                    {{ form.stdin.label }}<br>
+                    {{ form.stdin(cols=100, rows=5, wrap='off', class='shadow-window') }}
+                </div>
+            </form>
+
+            <div class="result">
+                <label>stdout</label>
+                <div id="stdout" class="shadow-window result-window inactive-window"></div>
+
+                <label>errors</label>
+                <div id="error" class="shadow-window result-window inactive-window"></div>
+            </div>
+        </div>
+    </body>
+</html>
