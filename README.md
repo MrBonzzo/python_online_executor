@@ -9,6 +9,9 @@ docker run -d -p 8000:8000 bonzzomi/python_online_executor
 
 После запуска приложение будет доступно по адресу `localhost:8000`
 
+## Пример работы
+![Пример работы](https://raw.githubusercontent.com/MrBonzzo/python_online_executor/master/example.png)
+
 ## Выполнение задания
 1) docker контейнер: есть
 2) изоляция окружения: сделал через удаление названий конкретных модулей и функций
